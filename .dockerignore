@@ -1,0 +1,10 @@
+# O arquivo .dockerignore serve para listar arquivos e pastas que não devem ser copiados para a imagem Docker durante o build.
+# Isso ajuda a manter a imagem menor, mais segura e evita que arquivos desnecessários (como ambientes virtuais, caches, arquivos temporários, etc.)
+# sejam incluídos no container final.
+
+# Ignorar a pasta do ambiente virtual para evitar que dependências locais sejam copiadas para a imagem Docker,
+# garantindo que o ambiente do container seja limpo e controlado apenas pelo requirements.txt
+venv
+
+# Ignorar arquivos de cache do Python, pois não são necessários para a execução da aplicação e só aumentam o tamanho da imagem
+__pycache__

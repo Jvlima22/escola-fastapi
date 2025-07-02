@@ -1,0 +1,13 @@
+services:
+  # Serviço da aplicação FastAPI
+
+  api:
+    build: . # Constroi a imagem Docker a partir do Dockerfile
+    container_name: api # Define o nome do container
+    ports:
+      - "8000:8000" # Mapeia a porta 8000 do container para a porta 8000 do host
+        # Conforme definido no Dockerfile com EXPOSE 8000 e CMD
+
+    volumes:
+      - .:/app #Monta o diretório atual (onde está seu código) em /app no container
+        #Isso permite que você edite o código no seu ambiente local e o container seja atualizado automaticamente
